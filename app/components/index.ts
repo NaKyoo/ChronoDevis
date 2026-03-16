@@ -141,6 +141,9 @@ export {
     NewInvoiceAlert,
     DynamicInvoiceTemplate,
     InvoiceLayout,
+    InvoiceTemplate1,
     InvoiceTemplate2,
 };
+
+
 
