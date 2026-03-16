@@ -10,9 +10,6 @@ const nextConfig = {
         });
         return config;
     },
-    experimental: {
-        nodeMiddleware: true,
-    },
 };
 
 // Bundle analyzer

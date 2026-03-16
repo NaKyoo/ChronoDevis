@@ -1,16 +1,10 @@
-export const runtime = 'nodejs';
+import { NextResponse } from 'next/server';
 
-import createMiddleware from "next-intl/middleware";
-
-export default createMiddleware({
-    // A list of all locales that are supported
-    locales: ["en", "fr"],
-
-    // Used when no locale matches
-    defaultLocale: "fr",
-});
+export function middleware() {
+    return NextResponse.next();
+}
 
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ["/", "/(en|fr)/:path*"],
+    // On exclut explicitement les routes d'API pour éviter tout conflit avec Puppeteer
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };
