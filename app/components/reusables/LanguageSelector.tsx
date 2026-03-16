@@ -39,9 +39,10 @@ const LanguageSelector = () => {
                 className="w-full sm:w-[10rem] relative"
                 aria-label="Languages"
             >
-                <Badge className="absolute -top-2 -right-1 font-normal scale-75 whitespace-nowrap">
+                <Badge className="absolute -top-3 -right-2 font-normal scale-[0.65] whitespace-nowrap px-1.5 py-0 select-none pointer-events-none border-blue-200 dark:border-blue-900 bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
                     BETA
                 </Badge>
+
                 <SelectValue placeholder={_t("languageSelector.placeholder")} />
             </SelectTrigger>
             <SelectContent

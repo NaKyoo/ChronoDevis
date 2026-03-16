@@ -93,10 +93,7 @@ import InvoiceTemplate2 from "./templates/invoice-pdf/InvoiceTemplate2";
 // Email templates
 // import SendPdfEmail from "./templates/email/SendPdfEmail";
 
-/* =========================
-   ? DEV ONLY
-   ========================= */
-import DevDebug from "./dev/DevDebug";
+
 
 export {
     BaseFooter,
@@ -144,7 +141,6 @@ export {
     NewInvoiceAlert,
     DynamicInvoiceTemplate,
     InvoiceLayout,
-    InvoiceTemplate1,
     InvoiceTemplate2,
-    DevDebug,
 };
+

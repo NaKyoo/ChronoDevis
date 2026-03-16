@@ -63,24 +63,29 @@ const FormInput = ({
             name={name}
             render={({ field }) => (
                 <FormItem>
-                    <div className="flex w-full gap-2 items-center text-sm">
-                        {label && <FormLabel className="flex-1">{`${label}:`}</FormLabel>}
+                    <div className="flex flex-col sm:flex-row w-full gap-2 sm:items-center text-sm">
+                        {label && (
+                            <FormLabel className="sm:flex-1 text-left sm:text-right">
+                                {`${label}:`}
+                            </FormLabel>
+                        )}
                         {labelHelper && (
                             <span className="text-xs"> {labelHelper}</span>
                         )}
 
-                        <div className="flex-1">
+                        <div className="sm:flex-1">
                             <FormControl>
                                 <Input
                                     {...field}
                                     placeholder={placeholder}
-                                    className="w-[13rem]"
+                                    className="w-full sm:w-[13rem]"
                                     {...props}
                                 />
                             </FormControl>
                             <FormMessage />
                         </div>
                     </div>
+
                 </FormItem>
             )}
         />

@@ -51,8 +51,9 @@ const ChargeInput = ({
 
     return (
         <>
-            <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
-                <div>{label}:</div>
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2 text-sm font-medium text-muted-foreground">
+                <div className="text-left">{label}:</div>
+
 
 
                 <div className="flex items-center gap-1">
@@ -74,13 +75,14 @@ const ChargeInput = ({
                                     <FormControl>
                                         <Input
                                             {...field}
-                                            className="w-[7rem]"
+                                            className="w-full sm:w-[7rem]"
                                             placeholder={label}
                                             type="number"
                                             min="0"
                                             max="1000000"
                                             step="0.01"
                                         />
+
                                     </FormControl>
                                 </div>
                                 <FormMessage />
