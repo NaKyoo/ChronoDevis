@@ -43,49 +43,51 @@ const BillToSection = () => {
     return (
         <section className="flex flex-col gap-1">
             <Subheading>{_t("form.steps.fromAndTo.billTo")}:</Subheading>
-            <FormInput
-                name="receiver.name"
-                label={_t("form.steps.fromAndTo.name")}
-                placeholder={_t("form.steps.fromAndTo.receiverNamePlaceholder")}
-            />
-            <FormInput
-                name="receiver.address"
-                label={_t("form.steps.fromAndTo.address")}
-                placeholder={_t("form.steps.fromAndTo.receiverAddressPlaceholder")}
-            />
-            <FormInput
-                name="receiver.zipCode"
-                label={_t("form.steps.fromAndTo.zipCode")}
-                placeholder={_t("form.steps.fromAndTo.receiverZipCodePlaceholder")}
-            />
-            <FormInput
-                name="receiver.city"
-                label={_t("form.steps.fromAndTo.city")}
-                placeholder={_t("form.steps.fromAndTo.receiverCityPlaceholder")}
-            />
-            <FormInput
-                name="receiver.country"
-                label={_t("form.steps.fromAndTo.country")}
-                placeholder={_t("form.steps.fromAndTo.receiverCountryPlaceholder")}
-            />
-            <FormInput
-                name="receiver.email"
-                label={_t("form.steps.fromAndTo.email")}
-                placeholder={_t("form.steps.fromAndTo.receiverEmailPlaceholder")}
-            />
-            <FormInput
-                name="receiver.phone"
-                label={_t("form.steps.fromAndTo.phone")}
-                placeholder={_t("form.steps.fromAndTo.receiverPhonePlaceholder")}
-                type="text"
-                inputMode="tel"
-                pattern="[0-9+\-\(\)\s]*"
-                aria-describedby="phone-format"
-                onInput={(e) => {
-                    const target = e.target as HTMLInputElement;
-                    target.value = target.value.replace(/[^\d\+\-\(\)\s]/g, "");
-                }}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1">
+                <FormInput
+                    name="receiver.name"
+                    label={_t("form.steps.fromAndTo.name")}
+                    placeholder={_t("form.steps.fromAndTo.receiverNamePlaceholder")}
+                />
+                <FormInput
+                    name="receiver.address"
+                    label={_t("form.steps.fromAndTo.address")}
+                    placeholder={_t("form.steps.fromAndTo.receiverAddressPlaceholder")}
+                />
+                <FormInput
+                    name="receiver.zipCode"
+                    label={_t("form.steps.fromAndTo.zipCode")}
+                    placeholder={_t("form.steps.fromAndTo.receiverZipCodePlaceholder")}
+                />
+                <FormInput
+                    name="receiver.city"
+                    label={_t("form.steps.fromAndTo.city")}
+                    placeholder={_t("form.steps.fromAndTo.receiverCityPlaceholder")}
+                />
+                <FormInput
+                    name="receiver.country"
+                    label={_t("form.steps.fromAndTo.country")}
+                    placeholder={_t("form.steps.fromAndTo.receiverCountryPlaceholder")}
+                />
+                <FormInput
+                    name="receiver.email"
+                    label={_t("form.steps.fromAndTo.email")}
+                    placeholder={_t("form.steps.fromAndTo.receiverEmailPlaceholder")}
+                />
+                <FormInput
+                    name="receiver.phone"
+                    label={_t("form.steps.fromAndTo.phone")}
+                    placeholder={_t("form.steps.fromAndTo.receiverPhonePlaceholder")}
+                    type="text"
+                    inputMode="tel"
+                    pattern="[0-9+\-\(\)\s]*"
+                    aria-describedby="phone-format"
+                    onInput={(e) => {
+                        const target = e.target as HTMLInputElement;
+                        target.value = target.value.replace(/[^\d\+\-\(\)\s]/g, "");
+                    }}
+                />
+            </div>
             {/* //? key = field.id fixes a bug where wrong field gets deleted  */}
             {fields?.map((field, index) => (
                 <FormCustomInput

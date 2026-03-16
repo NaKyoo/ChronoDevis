@@ -51,8 +51,9 @@ const ChargeInput = ({
 
     return (
         <>
-            <div className="flex justify-between items-center">
-                <div>{label}</div>
+            <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
+                <div>{label}:</div>
+
 
                 <div className="flex items-center gap-1">
                     <BaseButton

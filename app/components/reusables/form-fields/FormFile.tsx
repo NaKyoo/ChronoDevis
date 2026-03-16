@@ -17,8 +17,13 @@ import { Label } from "@/components/ui/label";
 // Components
 import { BaseButton } from "@/app/components";
 
+// Contexts
+import { useTranslationContext } from "@/contexts/TranslationContext";
+
 // Icons
 import { ImageMinus, Image } from "lucide-react";
+
+
 
 // Types
 import { NameType } from "@/types";
@@ -30,7 +35,9 @@ type FormFileProps = {
 };
 
 const FormFile = ({ name, label, placeholder }: FormFileProps) => {
+    const { _t } = useTranslationContext();
     const { control, setValue } = useFormContext();
+
 
     const logoImage = useWatch({
         name: name,
@@ -119,7 +126,7 @@ const FormFile = ({ name, label, placeholder }: FormFileProps) => {
                 <div>
                     <BaseButton variant="destructive" onClick={removeLogo}>
                         <ImageMinus />
-                        Remove logo
+                        {_t("actions.removeLogo")}
                     </BaseButton>
                 </div>
             )}

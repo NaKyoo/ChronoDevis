@@ -16,7 +16,7 @@
             "fromAndTo": {
                 "billFrom": "Émis par",
                 "billTo": "Destinataire",
-                "name": "Nom/Prénom:",
+                "name": "Nom/Prénom",
                 "namePlaceholder": "Votre nom",
                 "address": "Adresse",
                 "addressPlaceholder": "Votre adresse",
@@ -55,6 +55,7 @@
                 "dueDate": "Date d'échéance",
                 "currency": "Devise",
                 "currencyPlaceholder": "Choisir une devise",
+                "pickDate": "Choisir une date",
                 "templateSelector": {
                     "label": "Choisir le modèle de devis :",
                     "title": "Modèles",
@@ -115,7 +116,7 @@
                 "shipping": "Expédition",
                 "subTotal": "Sous-total",
                 "totalAmount": "Montant total",
-                "includeTotalInWords": "Inclure le total en mots?",
+                "includeTotalInWords": "Inclure le total en toutes lettres ?",
                 "yes": "Oui",
                 "no": "Non"
             }
@@ -138,6 +139,7 @@
         "generatePdf": "Générer un PDF",
         "generatePdfTooltip": "Générer votre document PDF",
         "generatePdfLoading": "Génération du PDF...",
+        "removeLogo": "Supprimer le logo",
         "pdfView": "Vue PDF",
         "finalPdf": {
             "heading": "PDF Final :",
@@ -190,5 +192,29 @@
     "languageSelector": {
         "placeholder": "Choisir une langue",
         "label": "Langues"
+    },
+    "template": {
+        "invoice": "Devis",
+        "billTo": "Destinataire",
+        "invoiceDate": "Date du devis",
+        "dueDate": "Date d'échéance",
+        "item": "Article",
+        "qty": "Qté",
+        "rate": "Taux",
+        "amount": "Montant",
+        "subtotal": "Sous-total",
+        "discount": "Remise",
+        "tax": "Taxe",
+        "shipping": "Expédition",
+        "total": "Total",
+        "totalInWords": "Total en toutes lettres",
+        "additionalNotes": "Notes complémentaires",
+        "paymentTerms": "Conditions de paiement",
+        "paymentAddress": "Veuillez envoyer le paiement à cette adresse",
+        "bank": "Banque",
+        "accountName": "Nom du compte",
+        "accountNo": "N° de compte",
+        "contactInfo": "Pour toute question concernant ce devis, veuillez utiliser les coordonnées suivantes :",
+        "signature": "Signature"
     }
 }

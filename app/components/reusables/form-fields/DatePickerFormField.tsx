@@ -21,8 +21,12 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 
+// Contexts
+import { useTranslationContext } from "@/contexts/TranslationContext";
+
 // Utils
 import { cn } from "@/lib/utils";
+
 
 // Variables
 import { DATE_OPTIONS } from "@/lib/variables";
@@ -32,6 +36,8 @@ import { CalendarIcon } from "lucide-react";
 
 // Types
 import { NameType } from "@/types";
+import { useLocale } from "next-intl";
+
 
 type DatePickerFormFieldProps = {
     name: NameType;
@@ -39,9 +45,13 @@ type DatePickerFormFieldProps = {
 };
 
 const DatePickerFormField = ({ name, label }: DatePickerFormFieldProps) => {
+    const { _t } = useTranslationContext();
     const { control } = useFormContext();
 
+    const locale = useLocale();
+
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
 
     return (
         <>
@@ -74,11 +84,16 @@ const DatePickerFormField = ({ name, label }: DatePickerFormFieldProps) => {
                                                     new Date(
                                                         field.value
                                                     ).toLocaleDateString(
-                                                        "en-US",
+                                                        locale,
                                                         DATE_OPTIONS
                                                     )
+
                                                 ) : (
-                                                    <span>Pick a date</span>
+                                                    <span>
+                                                        {_t(
+                                                            "form.steps.invoiceDetails.pickDate"
+                                                        )}
+                                                    </span>
                                                 )}
                                             </Button>
                                         </FormControl>

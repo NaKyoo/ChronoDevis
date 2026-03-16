@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 
-// Variables
-import { CURRENCIES_API } from "@/lib/variables";
-
 // Type
 import { CurrencyType } from "@/types";
 
@@ -11,21 +8,17 @@ const useCurrencies = () => {
     const [currenciesLoading, setCurrenciesLoading] = useState<boolean>(false);
 
     /**
-     * Fetches all the currencies asynchronously.
-     *
-     * @return {Promise<void>} Promise that resolves when the currencies are fetched.
+     * Set the restricted list of currencies (USD and EUR).
      */
     const fetchCurrencies = async () => {
         setCurrenciesLoading(true);
 
         try {
-            const response = await fetch(`${CURRENCIES_API}`);
-            const data = await response.json();
-
-            const currencyOptions = Object.keys(data).map((currencyCode) => {
-                const currencyName = data[currencyCode];
-                return { code: currencyCode, name: currencyName };
-            });
+            // As per user request: only USD and EUR
+            const currencyOptions: CurrencyType[] = [
+                { code: "USD", name: "United States Dollar" },
+                { code: "EUR", name: "Euro" },
+            ];
 
             setCurrencies(currencyOptions);
         } catch (err) {
@@ -43,3 +36,4 @@ const useCurrencies = () => {
 };
 
 export default useCurrencies;
+

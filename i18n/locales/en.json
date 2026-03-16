@@ -54,8 +54,10 @@
                 "issuedDate": "Issue Date",
                 "dueDate": "Due Date",
                 "currency": "Currency",
-                "currencyPlaceholder": "Select Currency"
+                "currencyPlaceholder": "Select Currency",
+                "pickDate": "Pick a date"
             },
+
             "lineItems": {
                 "heading": "Items",
                 "item": "Item",
@@ -122,6 +124,7 @@
         "generatePdf": "Generate PDF",
         "generatePdfTooltip": "Generate your quote",
         "generatePdfLoading": "Generating your quote",
+        "removeLogo": "Remove logo",
         "pdfView": "PDF View",
         "finalPdf": {
             "heading": "Final PDF:",
@@ -174,5 +177,29 @@
     "languageSelector": {
         "placeholder": "Select a language",
         "label": "Languages"
+    },
+    "template": {
+        "invoice": "Quote",
+        "billTo": "Bill To",
+        "invoiceDate": "Quote Date",
+        "dueDate": "Due Date",
+        "item": "Item",
+        "qty": "Qty",
+        "rate": "Rate",
+        "amount": "Amount",
+        "subtotal": "Subtotal",
+        "discount": "Discount",
+        "tax": "Tax",
+        "shipping": "Shipping",
+        "total": "Total",
+        "totalInWords": "Total in Words",
+        "additionalNotes": "Additional Notes",
+        "paymentTerms": "Payment Terms",
+        "paymentAddress": "Please send the payment to this address",
+        "bank": "Bank",
+        "accountName": "Account Name",
+        "accountNo": "Account No",
+        "contactInfo": "If you have any questions concerning this quote, use the following contact information:",
+        "signature": "Signature"
     }
 }

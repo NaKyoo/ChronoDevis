@@ -21,15 +21,10 @@ export const SEND_PDF_API = "/api/invoice/send";
 export const EXPORT_INVOICE_API = "/api/invoice/export";
 
 /**
- * External API endpoints
- */
-export const CURRENCIES_API =
-  "https://openexchangerates.org/api/currencies.json";
-
-/**
  * Local storage
  */
 export const LOCAL_STORAGE_INVOICE_DRAFT_KEY = "chronodevis:invoiceDraft";
+
 
 /**
  * Tailwind

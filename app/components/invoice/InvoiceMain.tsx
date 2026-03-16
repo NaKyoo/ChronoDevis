@@ -34,7 +34,7 @@ const InvoiceMain = () => {
                         <div className="flex-1 min-w-0 flex flex-col">
                             <InvoiceForm />
                         </div>
-                        <div className="flex-1 xl:flex-[1.4] 2xl:flex-[1.8] min-w-0 flex flex-col">
+                        <div className="flex-1 min-w-0 flex flex-col">
                             <InvoiceActions />
                         </div>
                     </div>
