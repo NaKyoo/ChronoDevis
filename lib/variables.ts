@@ -43,7 +43,7 @@ export const GOOGLE_SC_VERIFICATION = process.env.GOOGLE_SC_VERIFICATION;
 export const NODEMAILER_EMAIL = process.env.NODEMAILER_EMAIL;
 export const NODEMAILER_PW = process.env.NODEMAILER_PW;
 
-import { locales, defaultLocale } from "@/i18n/routing";
+import { locales, defaultLocale } from "../i18n/locales";
 
 /**
  * I18N
@@ -51,9 +51,10 @@ import { locales, defaultLocale } from "@/i18n/routing";
 export const LOCALES = [
     { code: "en", name: "English" },
     { code: "fr", name: "Français" },
-].filter(l => (locales as readonly string[]).includes(l.code));
+].filter((l) => (locales as readonly string[]).includes(l.code));
 
 export const DEFAULT_LOCALE = defaultLocale;
+
 
 
 /**
