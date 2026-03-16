@@ -87,7 +87,7 @@ export default async function LocaleLayout(props: {
             >
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Providers>
-                        <div className="flex flex-col pt-4">{children}</div>
+                        <div className="flex flex-col pt-4 max-w-[2000px] mx-auto w-full px-4">{children}</div>
 
                         <FloatingControls />
 

@@ -36,10 +36,10 @@ const LanguageSelector = () => {
             onValueChange={(lang) => handleLanguageChange(lang)}
         >
             <SelectTrigger
-                className="w-[10rem] relative"
+                className="w-full sm:w-[10rem] relative"
                 aria-label="Languages"
             >
-                <Badge className="absolute -top-3 right-0 font-normal">
+                <Badge className="absolute -top-2 -right-1 font-normal scale-75 whitespace-nowrap">
                     BETA
                 </Badge>
                 <SelectValue placeholder={_t("languageSelector.placeholder")} />

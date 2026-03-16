@@ -28,12 +28,13 @@ const InvoiceMain = () => {
                     onSubmit={handleSubmit(onFormSubmit, (err) => {
                         console.log(err);
                     })}
+                    className="flex flex-col grow"
                 >
-                    <div className="flex flex-col xl:flex-row gap-4">
-                        <div className="flex-[1.2] min-w-0">
+                    <div className="flex flex-col xl:flex-row 2xl:gap-8 gap-4 items-stretch grow">
+                        <div className="flex-1 min-w-0 flex flex-col">
                             <InvoiceForm />
                         </div>
-                        <div className="flex-1 min-w-0">
+                        <div className="flex-1 xl:flex-[1.4] 2xl:flex-[1.8] min-w-0 flex flex-col">
                             <InvoiceActions />
                         </div>
                     </div>
