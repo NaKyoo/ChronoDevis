@@ -1,7 +1,10 @@
 import createMiddleware from "next-intl/middleware";
-import { routing } from "@/i18n/routing";
+import { routing } from "./i18n/routing";
+
+export const runtime = "edge";
 
 export default createMiddleware(routing);
+
 
 export const config = {
     // Skip all paths that should not be internationalized. This example skips
