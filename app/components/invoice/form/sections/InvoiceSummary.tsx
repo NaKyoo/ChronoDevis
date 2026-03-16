@@ -29,12 +29,12 @@ const InvoiceSummary = () => {
                     <FormTextarea
                         name="details.additionalNotes"
                         label={_t("form.steps.summary.additionalNotes")}
-                        placeholder="Your additional notes"
+                        placeholder={_t("form.steps.summary.additionalNotesPlaceholder")}
                     />
                     <FormTextarea
                         name="details.paymentTerms"
                         label={_t("form.steps.summary.paymentTerms")}
-                        placeholder="Ex: Net 30"
+                        placeholder={_t("form.steps.summary.paymentTermsPlaceholder")}
                     />
                 </div>
 

@@ -41,42 +41,42 @@ const BillToSection = () => {
     };
 
     return (
-        <section className="flex flex-col gap-3">
+        <section className="flex flex-col gap-1">
             <Subheading>{_t("form.steps.fromAndTo.billTo")}:</Subheading>
             <FormInput
                 name="receiver.name"
                 label={_t("form.steps.fromAndTo.name")}
-                placeholder="Receiver name"
+                placeholder={_t("form.steps.fromAndTo.receiverNamePlaceholder")}
             />
             <FormInput
                 name="receiver.address"
                 label={_t("form.steps.fromAndTo.address")}
-                placeholder="Receiver address"
+                placeholder={_t("form.steps.fromAndTo.receiverAddressPlaceholder")}
             />
             <FormInput
                 name="receiver.zipCode"
                 label={_t("form.steps.fromAndTo.zipCode")}
-                placeholder="Receiver zip code"
+                placeholder={_t("form.steps.fromAndTo.receiverZipCodePlaceholder")}
             />
             <FormInput
                 name="receiver.city"
                 label={_t("form.steps.fromAndTo.city")}
-                placeholder="Receiver city"
+                placeholder={_t("form.steps.fromAndTo.receiverCityPlaceholder")}
             />
             <FormInput
                 name="receiver.country"
                 label={_t("form.steps.fromAndTo.country")}
-                placeholder="Receiver country"
+                placeholder={_t("form.steps.fromAndTo.receiverCountryPlaceholder")}
             />
             <FormInput
                 name="receiver.email"
                 label={_t("form.steps.fromAndTo.email")}
-                placeholder="Receiver email"
+                placeholder={_t("form.steps.fromAndTo.receiverEmailPlaceholder")}
             />
             <FormInput
                 name="receiver.phone"
                 label={_t("form.steps.fromAndTo.phone")}
-                placeholder="Receiver phone number"
+                placeholder={_t("form.steps.fromAndTo.receiverPhonePlaceholder")}
                 type="text"
                 inputMode="tel"
                 pattern="[0-9+\-\(\)\s]*"
@@ -96,7 +96,7 @@ const BillToSection = () => {
                 />
             ))}
             <BaseButton
-                tooltipLabel="Add custom input to receiver"
+                tooltipLabel={_t("form.steps.fromAndTo.addCustomInputReceiverTooltip")}
                 size="sm"
                 variant="link"
                 className="w-fit"

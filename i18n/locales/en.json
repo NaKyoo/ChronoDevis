@@ -1,11 +1,11 @@
 {
     "form": {
-        "title": "Invoice",
-        "description": "Generate Invoice",
-        "newInvBadge": "New Invoice",
+        "title": "Quote",
+        "description": "Generate Quote",
+        "newInvBadge": "New Quote",
         "wizard": {
             "fromAndTo": "From & To",
-            "invoiceDetails": "Invoice Details",
+            "invoiceDetails": "Quote Details",
             "lineItems": "Line Items",
             "paymentInfo": "Payment Info",
             "summary": "Summary",
@@ -17,37 +17,62 @@
                 "billFrom": "Bill From",
                 "billTo": "Bill To",
                 "name": "Name",
+                "namePlaceholder": "Your name",
                 "address": "Address",
+                "addressPlaceholder": "Your address",
                 "zipCode": "Zip",
+                "zipCodePlaceholder": "Your zip code",
                 "city": "City",
+                "cityPlaceholder": "Your city",
                 "country": "Country",
+                "countryPlaceholder": "Your country",
                 "email": "Email",
+                "emailPlaceholder": "Your email",
                 "phone": "Phone",
+                "phonePlaceholder": "Your phone number",
+                "receiverNamePlaceholder": "Receiver name",
+                "receiverAddressPlaceholder": "Receiver address",
+                "receiverZipCodePlaceholder": "Receiver zip code",
+                "receiverCityPlaceholder": "Receiver city",
+                "receiverCountryPlaceholder": "Receiver country",
+                "receiverEmailPlaceholder": "Receiver email",
+                "receiverPhonePlaceholder": "Receiver phone number",
                 "addCustomInput": "Add Custom Input",
+                "addCustomInputSenderTooltip": "Add custom input to sender",
+                "addCustomInputReceiverTooltip": "Add custom input to receiver",
                 "sender": "Sender",
                 "receiver": "Receiver"
             },
             "invoiceDetails": {
-                "heading": "Invoice Details",
+                "heading": "Quote Details",
                 "invoiceLogo": {
-                    "label": "Invoice Logo",
+                    "label": "Quote Logo",
                     "placeholder": "Click to upload image"
                 },
-                "invoiceNumber": "Invoice Number",
+                "invoiceNumber": "Quote Number",
+                "invoiceNumberPlaceholder": "Quote number",
                 "issuedDate": "Issue Date",
                 "dueDate": "Due Date",
-                "currency": "Currency"
+                "currency": "Currency",
+                "currencyPlaceholder": "Select Currency"
             },
             "lineItems": {
                 "heading": "Items",
                 "item": "Item",
                 "name": "Name",
+                "namePlaceholder": "Item name",
                 "quantity": "Quantity",
                 "rate": "Rate",
                 "total": "Total",
+                "totalPlaceholder": "Item total",
                 "description": "Description",
+                "descriptionPlaceholder": "Item description",
+                "emptyName": "Empty name",
                 "addNewItem": "Add a new item",
-                "removeItem": "Remove item"
+                "addNewItemTooltip": "Add a new item to the list",
+                "removeItem": "Remove item",
+                "moveUpTooltip": "Move the item up",
+                "moveDownTooltip": "Move the item down"
             },
             "paymentInfo": {
                 "heading": "Payment Information",
@@ -60,13 +85,15 @@
                 "signature": {
                     "heading": "Signature",
                     "placeholder": "Click to add signature",
-                    "description": "Choose a method to add your signature to the invoice",
+                    "description": "Choose a method to add your signature to the quote",
                     "draw": "Draw",
                     "type": "Type",
                     "upload": "Upload"
                 },
                 "additionalNotes": "Additional Notes",
+                "additionalNotesPlaceholder": "Your additional notes",
                 "paymentTerms": "Payment Terms",
+                "paymentTermsPlaceholder": "Ex: Net 30",
                 "discount": "Discount",
                 "tax": "Tax",
                 "shipping": "Shipping",
@@ -81,13 +108,71 @@
     "actions": {
         "title": "Actions",
         "description": "Operations and preview",
-        "loadInvoice": "Load Invoice",
-        "exportInvoice": "Export Invoice",
-        "newInvoice": "New Invoice",
+        "loadInvoice": "Load Quote",
+        "loadInvoiceTooltip": "Open load quote menu",
+        "exportInvoice": "Export Quote",
+        "exportInvoiceTooltip": "Export quote data",
+        "newInvoice": "New Quote",
+        "newInvoiceTooltip": "Get a new quote form",
+        "resetFormButton": "Reset Form",
+        "resetFormTooltip": "Reset entire form",
+        "resetFormTitle": "Reset form?",
+        "resetFormDescription": "This will clear all fields and the saved draft.",
+        "reset": "Reset",
         "generatePdf": "Generate PDF",
-        "pdfView": "PDF View"
+        "generatePdfTooltip": "Generate your quote",
+        "generatePdfLoading": "Generating your quote",
+        "pdfView": "PDF View",
+        "finalPdf": {
+            "heading": "Final PDF:",
+            "backToPreview": "Back to Live Preview",
+            "previewTooltip": "Preview quote in new tab",
+            "preview": "Preview",
+            "downloadTooltip": "Download quote PDF",
+            "download": "Download",
+            "printTooltip": "Print quote",
+            "print": "Print",
+            "saveTooltip": "Save quote in website",
+            "save": "Save",
+            "sendToMailTooltip": "Send quote PDF to mail",
+            "sendToMail": "Send to mail"
+        }
+    },
+    "modals": {
+        "newInvoiceAlert": {
+            "title": "Are you absolutely sure?",
+            "description": "This action cannot be undone. You might lose your data if you have unsaved changes",
+            "cancel": "Cancel",
+            "confirm": "Create new quote"
+        },
+        "sendPdfModal": {
+            "title": "Send to email",
+            "description": "Please specify the email address for quote delivery.",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Enter email address",
+            "errorInvalidEmail": "Please enter a valid email address",
+            "sendTooltip": "Send quote PDF",
+            "sendLoading": "Sending email...",
+            "sendButton": "Send PDF"
+        }
+    },
+    "email": {
+        "subject": "Quote Ready: #{invoiceNumber}",
+        "preview": "Your quote #{invoiceNumber} is ready for download",
+        "heading": "Thanks for using ChronoDevis!",
+        "text1": "We're pleased to inform you that your quote",
+        "text2": "is ready for download. Please find the attached PDF document.",
+        "regards": "Best Regards,",
+        "team": "ChronoDevis Team"
     },
     "footer": {
         "developedBy": "Developed by"
+    },
+    "navbar": {
+        "logoAlt": "ChronoDevis Logo"
+    },
+    "languageSelector": {
+        "placeholder": "Select a language",
+        "label": "Languages"
     }
 }

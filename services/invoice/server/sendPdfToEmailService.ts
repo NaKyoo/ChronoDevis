@@ -7,7 +7,7 @@ import nodemailer, { SendMailOptions } from "nodemailer";
 import { render } from "@react-email/render";
 
 // Components
-import { SendPdfEmail } from "@/app/components";
+import SendPdfEmail from "@/app/components/templates/email/SendPdfEmail";
 
 // Helpers
 import { fileToBuffer } from "@/lib/helpers";
@@ -55,18 +55,25 @@ export async function sendPdfToEmailService(
     const email = fd.get("email") as string;
     const invoicePdf = fd.get("invoicePdf") as File;
     const invoiceNumber = fd.get("invoiceNumber") as string;
+    const locale = (fd.get("locale") as string) || "fr";
 
     // Get email html content
-    const emailHTML = render(SendPdfEmail({ invoiceNumber }));
+    const emailHTML = render(SendPdfEmail({ invoiceNumber, locale }));
+
+    // Localized subject
+    const subject =
+        locale === "fr"
+            ? `Devis prêt : #${invoiceNumber}`
+            : `Quote Ready: #${invoiceNumber}`;
 
     // Convert file to buffer
     const invoiceBuffer = await fileToBuffer(invoicePdf);
 
     try {
         const mailOptions: SendMailOptions = {
-            from: "Invoify",
+            from: "ChronoDevis",
             to: email,
-            subject: `Invoice Ready: #${invoiceNumber}`,
+            subject: subject,
             html: emailHTML,
             attachments: [
                 {

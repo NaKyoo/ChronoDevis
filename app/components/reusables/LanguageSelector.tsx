@@ -20,7 +20,10 @@ import { Badge } from "@/components/ui/badge";
 // Variables
 import { LOCALES } from "@/lib/variables";
 
+import { useTranslationContext } from "@/contexts/TranslationContext";
+
 const LanguageSelector = () => {
+    const { _t } = useTranslationContext();
     const router = useRouter();
     const params = useParams();
 
@@ -36,10 +39,10 @@ const LanguageSelector = () => {
                 className="w-[10rem] relative"
                 aria-label="Languages"
             >
-                <Badge className="position: absolute -top-4 -left-2 font-normal">
+                <Badge className="absolute -top-3 right-0 font-normal">
                     BETA
                 </Badge>
-                <SelectValue placeholder="Select a language" />
+                <SelectValue placeholder={_t("languageSelector.placeholder")} />
             </SelectTrigger>
             <SelectContent
                 style={{
@@ -48,7 +51,7 @@ const LanguageSelector = () => {
                 }}
             >
                 <SelectGroup>
-                    <SelectLabel>Languages</SelectLabel>
+                    <SelectLabel>{_t("languageSelector.label")}</SelectLabel>
 
                     {LOCALES.map((locale) => (
                         <SelectItem key={locale.code} value={locale.code}>

@@ -1,8 +1,8 @@
 /* =========================
    * Navigation
    ========================= */
-import BaseNavbar from "./layout/BaseNavbar";
 import BaseFooter from "./layout/BaseFooter";
+import FloatingControls from "./layout/FloatingControls";
 
 /* =========================
    * Invoice
@@ -91,7 +91,7 @@ import InvoiceTemplate1 from "./templates/invoice-pdf/InvoiceTemplate1";
 import InvoiceTemplate2 from "./templates/invoice-pdf/InvoiceTemplate2";
 
 // Email templates
-import SendPdfEmail from "./templates/email/SendPdfEmail";
+// import SendPdfEmail from "./templates/email/SendPdfEmail";
 
 /* =========================
    ? DEV ONLY
@@ -99,8 +99,8 @@ import SendPdfEmail from "./templates/email/SendPdfEmail";
 import DevDebug from "./dev/DevDebug";
 
 export {
-    BaseNavbar,
     BaseFooter,
+    FloatingControls,
     InvoiceMain,
     InvoiceForm,
     InvoiceActions,
@@ -146,6 +146,5 @@ export {
     InvoiceLayout,
     InvoiceTemplate1,
     InvoiceTemplate2,
-    SendPdfEmail,
     DevDebug,
 };

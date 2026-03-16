@@ -63,7 +63,7 @@ const FormInput = ({
             name={name}
             render={({ field }) => (
                 <FormItem>
-                    <div className="flex w-full gap-5 items-center text-sm">
+                    <div className="flex w-full gap-2 items-center text-sm">
                         {label && <FormLabel className="flex-1">{`${label}:`}</FormLabel>}
                         {labelHelper && (
                             <span className="text-xs"> {labelHelper}</span>

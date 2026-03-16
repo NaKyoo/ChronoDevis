@@ -315,10 +315,13 @@ export const InvoiceContextProvider = ({
    * @returns {Promise<void>} A promise that resolves once the email is successfully sent.
    */
   const sendPdfToMail = (email: string) => {
+    const locale = window.location.pathname.split("/")[1] || "fr";
+
     const fd = new FormData();
     fd.append("email", email);
     fd.append("invoicePdf", invoicePdf, "invoice.pdf");
     fd.append("invoiceNumber", getValues().details.invoiceNumber);
+    fd.append("locale", locale);
 
     return fetch(SEND_PDF_API, {
       method: "POST",

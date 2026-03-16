@@ -21,6 +21,9 @@ import {
     InvoiceTemplate2,
 } from "@/app/components";
 
+// Contexts
+import { useTranslationContext } from "@/contexts/TranslationContext";
+
 // Template images
 import template1 from "@/public/assets/img/invoice-1-example.png";
 import template2 from "@/public/assets/img/invoice-2-example.png";
@@ -32,20 +35,21 @@ import { Check } from "lucide-react";
 import { InvoiceType } from "@/types";
 
 const TemplateSelector = () => {
+    const { _t } = useTranslationContext();
     const { watch, setValue } = useFormContext<InvoiceType>();
     const formValues = watch();
     const templates = [
         {
             id: 1,
-            name: "Template 1",
-            description: "Template 1 description",
+            name: _t("form.steps.invoiceDetails.templates.template1.name"),
+            description: _t("form.steps.invoiceDetails.templates.template1.description"),
             img: template1,
             component: <InvoiceTemplate1 {...formValues} />,
         },
         {
             id: 2,
-            name: "Template 2",
-            description: "Second template",
+            name: _t("form.steps.invoiceDetails.templates.template2.name"),
+            description: _t("form.steps.invoiceDetails.templates.template2.description"),
             img: template2,
             component: <InvoiceTemplate2 {...formValues} />,
         },
@@ -53,14 +57,14 @@ const TemplateSelector = () => {
     return (
         <>
             <div>
-                <Label>Choose Invoice Template:</Label>
+                <Label>{_t("form.steps.invoiceDetails.templateSelector.label")}</Label>
 
                 <div>
                     <Card>
                         <CardHeader>
-                            Templates
+                            {_t("form.steps.invoiceDetails.templateSelector.title")}
                             <CardDescription>
-                                Select one of the predefined templates
+                                {_t("form.steps.invoiceDetails.templateSelector.description")}
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="">
@@ -104,7 +108,7 @@ const TemplateSelector = () => {
                                                 )
                                             }
                                         >
-                                            Select
+                                            {_t("form.steps.invoiceDetails.templateSelector.selectButton")}
                                         </BaseButton>
                                     </div>
                                 ))}

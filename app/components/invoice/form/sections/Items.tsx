@@ -135,7 +135,7 @@ const Items = () => {
                 </DragOverlay> */}
             </DndContext>
             <BaseButton
-                tooltipLabel="Add a new item to the list"
+                tooltipLabel={_t("form.steps.lineItems.addNewItemTooltip")}
                 onClick={addNewField}
             >
                 <Plus />

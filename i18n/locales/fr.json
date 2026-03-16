@@ -1,11 +1,11 @@
 {
     "form": {
-        "title": "Facture",
-        "description": "Générer une facture",
-        "newInvBadge": "Nouvelle facture",
+        "title": "Devis",
+        "description": "Générer un devis",
+        "newInvBadge": "Nouveau devis",
         "wizard": {
             "fromAndTo": "De & À",
-            "invoiceDetails": "Détails de la facture",
+            "invoiceDetails": "Détails du devis",
             "lineItems": "Articles",
             "paymentInfo": "Informations de paiement",
             "summary": "Résumé",
@@ -14,40 +14,81 @@
         },
         "steps": {
             "fromAndTo": {
-                "billFrom": "Facturé de",
-                "billTo": "Facturé à",
+                "billFrom": "Émis par",
+                "billTo": "Destinataire",
                 "name": "Nom/Prénom:",
+                "namePlaceholder": "Votre nom",
                 "address": "Adresse",
+                "addressPlaceholder": "Votre adresse",
                 "zipCode": "Code postal",
+                "zipCodePlaceholder": "Votre code postal",
                 "city": "Ville",
+                "cityPlaceholder": "Votre ville",
                 "country": "Pays",
+                "countryPlaceholder": "Votre pays",
                 "email": "Email",
+                "emailPlaceholder": "Votre email",
                 "phone": "Téléphone",
+                "phonePlaceholder": "Votre numéro de téléphone",
+                "receiverNamePlaceholder": "Nom du destinataire",
+                "receiverAddressPlaceholder": "Adresse du destinataire",
+                "receiverZipCodePlaceholder": "Code postal du destinataire",
+                "receiverCityPlaceholder": "Ville du destinataire",
+                "receiverCountryPlaceholder": "Pays du destinataire",
+                "receiverEmailPlaceholder": "Email du destinataire",
+                "receiverPhonePlaceholder": "Téléphone du destinataire",
                 "addCustomInput": "Ajouter une entrée personnalisée",
+                "addCustomInputSenderTooltip": "Ajouter un champ à l'expéditeur",
+                "addCustomInputReceiverTooltip": "Ajouter un champ au destinataire",
                 "sender": "Expéditeur",
                 "receiver": "Destinataire"
             },
             "invoiceDetails": {
-                "heading": "Détails de la facture",
+                "heading": "Détails du devis",
                 "invoiceLogo": {
-                    "label": "Logo de la facture",
+                    "label": "Logo du devis",
                     "placeholder": "Cliquez pour télécharger une image"
                 },
-                "invoiceNumber": "Numéro de facture",
+                "invoiceNumber": "Numéro de devis",
+                "invoiceNumberPlaceholder": "Numéro du devis",
                 "issuedDate": "Date d'émission",
                 "dueDate": "Date d'échéance",
-                "currency": "Devise"
+                "currency": "Devise",
+                "currencyPlaceholder": "Choisir une devise",
+                "templateSelector": {
+                    "label": "Choisir le modèle de devis :",
+                    "title": "Modèles",
+                    "description": "Sélectionnez l'un des modèles prédéfinis",
+                    "selectButton": "Sélectionner"
+                },
+                "templates": {
+                    "template1": {
+                        "name": "Modèle 1",
+                        "description": "Premier modèle de devis"
+                    },
+                    "template2": {
+                        "name": "Modèle 2",
+                        "description": "Second modèle de devis"
+                    }
+                }
             },
             "lineItems": {
                 "heading": "Articles",
                 "item": "Article",
                 "name": "Nom",
+                "namePlaceholder": "Nom de l'article",
                 "quantity": "Quantité",
                 "rate": "Taux",
                 "total": "Total",
+                "totalPlaceholder": "Total de l'article",
                 "description": "Description",
+                "descriptionPlaceholder": "Description de l'article",
+                "emptyName": "Nom vide",
                 "addNewItem": "Ajouter un nouvel article",
-                "removeItem": "Supprimer l'article"
+                "addNewItemTooltip": "Ajouter un article à la liste",
+                "removeItem": "Supprimer l'article",
+                "moveUpTooltip": "Déplacer vers le haut",
+                "moveDownTooltip": "Déplacer vers le bas"
             },
             "paymentInfo": {
                 "heading": "Informations de paiement",
@@ -60,13 +101,15 @@
                 "signature": {
                     "heading": "Signature",
                     "placeholder": "Cliquez pour ajouter une signature",
-                    "description": "Choisissez une méthode pour ajouter votre signature à la facture",
+                    "description": "Choisissez une méthode pour ajouter votre signature au devis",
                     "draw": "Dessiner",
                     "type": "Taper",
                     "upload": "Télécharger"
                 },
                 "additionalNotes": "Notes supplémentaires",
+                "additionalNotesPlaceholder": "Vos notes supplémentaires",
                 "paymentTerms": "Conditions de paiement",
+                "paymentTermsPlaceholder": "Ex: Paiement à 30 jours",
                 "discount": "Remise",
                 "tax": "Taxe",
                 "shipping": "Expédition",
@@ -81,13 +124,71 @@
     "actions": {
         "title": "Actions",
         "description": "Opérations et aperçu",
-        "loadInvoice": "Charger la facture",
-        "exportInvoice": "Exporter la facture",
-        "newInvoice": "Nouvelle facture",
+        "loadInvoice": "Charger un devis",
+        "loadInvoiceTooltip": "Ouvrir le menu de chargement",
+        "exportInvoice": "Exporter le devis",
+        "exportInvoiceTooltip": "Exporter les données du devis",
+        "newInvoice": "Nouveau devis",
+        "newInvoiceTooltip": "Créer un nouveau formulaire",
+        "resetFormButton": "Réinitialiser le formulaire",
+        "resetFormTooltip": "Réinitialiser tout le formulaire",
+        "resetFormTitle": "Réinitialiser le formulaire ?",
+        "resetFormDescription": "Cela effacera tous les champs et le brouillon enregistré.",
+        "reset": "Réinitialiser",
         "generatePdf": "Générer un PDF",
-        "pdfView": "Vue PDF"
+        "generatePdfTooltip": "Générer votre document PDF",
+        "generatePdfLoading": "Génération du PDF...",
+        "pdfView": "Vue PDF",
+        "finalPdf": {
+            "heading": "PDF Final :",
+            "backToPreview": "Retour à l'aperçu en direct",
+            "previewTooltip": "Aperçu du devis dans un nouvel onglet",
+            "preview": "Aperçu",
+            "downloadTooltip": "Télécharger le PDF du devis",
+            "download": "Télécharger",
+            "printTooltip": "Imprimer le devis",
+            "print": "Imprimer",
+            "saveTooltip": "Enregistrer le devis sur le site",
+            "save": "Enregistrer",
+            "sendToMailTooltip": "Envoyer le devis par email",
+            "sendToMail": "Envoyer par email"
+        }
+    },
+    "modals": {
+        "newInvoiceAlert": {
+            "title": "Êtes-vous absolument sûr ?",
+            "description": "Cette action est irréversible. Vous pourriez perdre vos données si vous avez des modifications non enregistrées.",
+            "cancel": "Annuler",
+            "confirm": "Créer un nouveau devis"
+        },
+        "sendPdfModal": {
+            "title": "Envoyer par email",
+            "description": "Veuillez spécifier l'adresse email pour l'envoi du devis.",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Entrez l'adresse email",
+            "errorInvalidEmail": "Veuillez entrer une adresse email valide",
+            "sendTooltip": "Envoyer le PDF du devis",
+            "sendLoading": "Envoi de l'email...",
+            "sendButton": "Envoyer le PDF"
+        }
+    },
+    "email": {
+        "subject": "Devis prêt : #{invoiceNumber}",
+        "preview": "Votre devis #{invoiceNumber} est prêt pour le téléchargement",
+        "heading": "Merci d'utiliser ChronoDevis !",
+        "text1": "Nous avons le plaisir de vous informer que votre devis",
+        "text2": "est prêt pour le téléchargement. Veuillez trouver ci-joint le document PDF.",
+        "regards": "Cordialement,",
+        "team": "L'équipe ChronoDevis"
     },
     "footer": {
         "developedBy": "Développé par"
+    },
+    "navbar": {
+        "logoAlt": "Logo ChronoDevis"
+    },
+    "languageSelector": {
+        "placeholder": "Choisir une langue",
+        "label": "Langues"
     }
 }

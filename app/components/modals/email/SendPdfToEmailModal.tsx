@@ -17,6 +17,9 @@ import { Input } from "@/components/ui/input";
 // Components
 import { BaseButton } from "@/app/components";
 
+// Contexts
+import { useTranslationContext } from "@/contexts/TranslationContext";
+
 // Helpers
 import { isValidEmail } from "@/lib/helpers";
 
@@ -29,11 +32,12 @@ const SendPdfToEmailModal = ({
     sendPdfToMail,
     children,
 }: SendPdfToEmailModalProps) => {
+    const { _t } = useTranslationContext();
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
-    const errorMessage = "Please enter a valid email address";
+    const errorMessage = _t("modals.sendPdfModal.errorInvalidEmail");
 
     const handleSendPdf = () => {
         setLoading(true);
@@ -57,15 +61,15 @@ const SendPdfToEmailModal = ({
 
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>Send to email</DialogTitle>
+                    <DialogTitle>{_t("modals.sendPdfModal.title")}</DialogTitle>
                     <DialogDescription>
-                        Please specify the email address for invoice delivery.
+                        {_t("modals.sendPdfModal.description")}
                     </DialogDescription>
                 </DialogHeader>
-                <Label>Email</Label>
+                <Label>{_t("modals.sendPdfModal.emailLabel")}</Label>
                 <Input
                     type="email"
-                    placeholder="Enter email address"
+                    placeholder={_t("modals.sendPdfModal.emailPlaceholder")}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 ></Input>
@@ -75,12 +79,12 @@ const SendPdfToEmailModal = ({
                 )}
 
                 <BaseButton
-                    tooltipLabel="Send invoice PDF"
+                    tooltipLabel={_t("modals.sendPdfModal.sendTooltip")}
                     loading={loading}
-                    loadingText="Sending email"
+                    loadingText={_t("modals.sendPdfModal.sendLoading")}
                     onClick={handleSendPdf}
                 >
-                    Send PDF
+                    {_t("modals.sendPdfModal.sendButton")}
                 </BaseButton>
             </DialogContent>
         </Dialog>

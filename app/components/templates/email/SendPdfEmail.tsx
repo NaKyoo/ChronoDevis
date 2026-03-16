@@ -16,44 +16,48 @@ import { Tailwind } from "@react-email/tailwind";
 // Variables
 import { BASE_URL } from "@/lib/variables";
 
+// Locales
+import fr from "@/i18n/locales/fr.json";
+import en from "@/i18n/locales/en.json";
+
 type SendPdfEmailProps = {
     invoiceNumber: string;
+    locale?: string;
 };
 
-export default function SendPdfEmail({ invoiceNumber }: SendPdfEmailProps) {
-    const logo = `${BASE_URL}/assets/img/invoify-logo.png`;
+export default function SendPdfEmail({
+    invoiceNumber,
+    locale = "fr",
+}: SendPdfEmailProps) {
+    const t = locale === "fr" ? fr.email : en.email;
+
+    const logo = `${BASE_URL}/assets/img/chronodevis-logo.png`;
     return (
         <Html>
             <Head />
-            <Preview>
-                Your invoice #{invoiceNumber} is ready for download
-            </Preview>
+            <Preview>{t.preview.replace("#{invoiceNumber}", invoiceNumber)}</Preview>
             <Tailwind>
                 <Body className="bg-gray-100">
                     <Container>
                         <Section className="bg-white border-black-950 my-10 px-10 py-4 rounded-md">
                             <Img
                                 src={logo}
-                                alt="Invoify Logo"
+                                alt="ChronoDevis Logo"
                                 width={200}
                                 height={120}
                             />
-                            <Heading className="leading-tight">
-                                Thanks for using Invoify!
-                            </Heading>
+                            <Heading className="leading-tight">{t.heading}</Heading>
 
                             <Text>
-                                We're pleased to inform you that your invoice{" "}
-                                <b>#{invoiceNumber}</b> is ready for download.
-                                Please find the attached PDF document.
+                                {t.text1} <b>#{invoiceNumber}</b> {t.text2}
                             </Text>
 
                             <Hr />
 
                             <Text>
-                                Best Regards,
+                                {t.regards}
                                 <br />
-                                Invoify Team
+                                {t.team}
                             </Text>
                         </Section>
                     </Container>

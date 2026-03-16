@@ -17,10 +17,10 @@ const InvoiceDetails = () => {
     const { _t } = useTranslationContext();
 
     return (
-        <section className="flex flex-col flex-wrap gap-5">
+        <section className="flex flex-col flex-wrap gap-2">
             <Subheading>{_t("form.steps.invoiceDetails.heading")}:</Subheading>
 
-            <div className="flex flex-row flex-wrap gap-5">
+            <div className="flex flex-row flex-wrap gap-2">
                 <div className="flex flex-col gap-2">
                     <FormFile
                         name="details.invoiceLogo"
@@ -35,7 +35,7 @@ const InvoiceDetails = () => {
                     <FormInput
                         name="details.invoiceNumber"
                         label={_t("form.steps.invoiceDetails.invoiceNumber")}
-                        placeholder="Invoice number"
+                        placeholder={_t("form.steps.invoiceDetails.invoiceNumberPlaceholder")}
                     />
 
                     <DatePickerFormField
@@ -51,7 +51,7 @@ const InvoiceDetails = () => {
                     <CurrencySelector
                         name="details.currency"
                         label={_t("form.steps.invoiceDetails.currency")}
-                        placeholder="Select Currency"
+                        placeholder={_t("form.steps.invoiceDetails.currencyPlaceholder")}
                     />
                 </div>
 

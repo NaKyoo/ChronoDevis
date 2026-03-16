@@ -7,6 +7,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { BaseButton, SendPdfToEmailModal, Subheading } from "@/app/components";
 
 // Contexts
+import { useTranslationContext } from "@/contexts/TranslationContext";
 import { useInvoiceContext } from "@/contexts/InvoiceContext";
 
 // Icons
@@ -20,6 +21,7 @@ import {
 } from "lucide-react";
 
 export default function FinalPdf() {
+    const { _t } = useTranslationContext();
     const {
         pdfUrl,
         removeFinalPdf,
@@ -32,7 +34,7 @@ export default function FinalPdf() {
 
     return (
         <>
-            <Subheading>Final PDF:</Subheading>
+            <Subheading>{_t("actions.finalPdf.heading")}</Subheading>
             <div className="flex items-center mb-3">
                 <BaseButton
                     variant={"ghost"}
@@ -40,59 +42,59 @@ export default function FinalPdf() {
                     onClick={removeFinalPdf}
                 >
                     <MoveLeft className="w-5 h-5" />
-                    Back to Live Preview
+                    {_t("actions.finalPdf.backToPreview")}
                 </BaseButton>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-2 my-1">
                 <BaseButton
-                    tooltipLabel="Preview invoice in new tab"
+                    tooltipLabel={_t("actions.finalPdf.previewTooltip")}
                     onClick={previewPdfInTab}
                     size="sm"
                     variant={"outline"}
                 >
                     <Eye className="w-5 h-5" />
-                    Preview
+                    {_t("actions.finalPdf.preview")}
                 </BaseButton>
                 <BaseButton
-                    tooltipLabel="Download invoice PDF"
+                    tooltipLabel={_t("actions.finalPdf.downloadTooltip")}
                     onClick={downloadPdf}
                     size="sm"
                     variant={"outline"}
                 >
                     <DownloadCloudIcon className="w-5 h-5" />
-                    Download
+                    {_t("actions.finalPdf.download")}
                 </BaseButton>
 
                 <BaseButton
-                    tooltipLabel="Print invoice"
+                    tooltipLabel={_t("actions.finalPdf.printTooltip")}
                     onClick={printPdf}
                     size="sm"
                     variant={"outline"}
                 >
                     <Printer className="w-5 h-5" />
-                    Print
+                    {_t("actions.finalPdf.print")}
                 </BaseButton>
 
                 <BaseButton
-                    tooltipLabel="Save invoice in website"
+                    tooltipLabel={_t("actions.finalPdf.saveTooltip")}
                     onClick={saveInvoice}
                     size="sm"
                     variant={"outline"}
                 >
                     <BookmarkIcon className="w-5 h-5" />
-                    Save
+                    {_t("actions.finalPdf.save")}
                 </BaseButton>
 
                 <SendPdfToEmailModal sendPdfToMail={sendPdfToMail}>
                     <BaseButton
-                        tooltipLabel="Send invoice PDF to mail"
+                        tooltipLabel={_t("actions.finalPdf.sendToMailTooltip")}
                         size="sm"
                         variant={"outline"}
                     >
                         <Mail className="w-5 h-5" />
-                        Send to mail
+                        {_t("actions.finalPdf.sendToMail")}
                     </BaseButton>
                 </SendPdfToEmailModal>
             </div>

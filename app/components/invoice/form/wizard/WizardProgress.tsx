@@ -103,24 +103,19 @@ const WizardProgress = ({ wizard }: WizardProgressProps) => {
     ];
 
     return (
-        <div className="flex flex-wrap justify-around items-center gap-y-3">
+        <div className="flex flex-wrap justify-around items-center gap-y-1">
             {steps.map((step, idx) => (
                 <div key={step.id} className="flex items-center">
                     <BaseButton
                         variant={returnButtonVariant(step)}
                         className="w-auto"
+                        size="sm"
                         onClick={() => {
                             wizard.goToStep(step.id);
                         }}
                     >
                         {step.id + 1}. {step.label}
                     </BaseButton>
-
-                    {/* {step.id != stepCount - 1 && (
-                        <div>
-                            <Dot />
-                        </div>
-                    )} */}
                 </div>
             ))}
         </div>

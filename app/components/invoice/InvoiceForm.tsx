@@ -52,47 +52,42 @@ const InvoiceForm = () => {
     }, [invoiceNumber]);
 
     return (
-        <div className={`xl:w-[55%]`}>
+        <div className="w-full">
             <Card>
-                <CardHeader>
+                <CardHeader className="py-2 px-4">
                     <div className="flex gap-3">
                         <CardTitle className="flex items-center gap-3">
-                            <span className="uppercase">
+                            <span className="uppercase text-lg">
                                 {_t("form.title")}
                             </span>
                         </CardTitle>
-                        <Badge variant="secondary" className="w-fit">
-                            <p style={{ fontSize: "14px" }}>
+                        <Badge variant="secondary" className="w-fit h-6">
+                            <p style={{ fontSize: "12px" }}>
                                 {invoiceNumberLabel}
                             </p>
                         </Badge>
                     </div>
-                    <CardDescription>{_t("form.description")}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                    <div className="space-y-8">
+                <CardContent className="p-4">
+                    <div className="space-y-4">
                         <Wizard>
                             <WizardStep>
-                                <div className="flex gap-x-20 gap-y-10">
+                                <div className="flex flex-wrap gap-4">
                                     <BillFromSection />
-
                                     <BillToSection />
                                 </div>
                             </WizardStep>
                             <WizardStep>
-                                <div className="flex flex-wrap gap-y-10">
+                                <div className="flex flex-wrap gap-4">
                                     <InvoiceDetails />
                                 </div>
                             </WizardStep>
-
                             <WizardStep>
                                 <Items />
                             </WizardStep>
-
                             <WizardStep>
                                 <PaymentInformation />
                             </WizardStep>
-
                             <WizardStep>
                                 <InvoiceSummary />
                             </WizardStep>

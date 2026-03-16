@@ -7,6 +7,7 @@ import { useFormContext } from "react-hook-form";
 
 // Context
 import { useInvoiceContext } from "@/contexts/InvoiceContext";
+import { useTranslationContext } from "@/contexts/TranslationContext";
 
 // ShadCn
 import {
@@ -35,6 +36,7 @@ const NewInvoiceAlert = ({
   confirmLabel,
   onConfirm,
 }: NewInvoiceAlertProps) => {
+  const { _t } = useTranslationContext();
   // Invoice context
   const { newInvoice } = useInvoiceContext();
 
@@ -69,17 +71,18 @@ const NewInvoiceAlert = ({
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              {title ?? "Are you absolutely sure?"}
+              {title ?? _t("modals.newInvoiceAlert.title")}
             </AlertDialogTitle>
             <AlertDialogDescription>
-              {description ??
-                "This action cannot be undone. You might lose your data if you have unsaved changes"}
+              {description ?? _t("modals.newInvoiceAlert.description")}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={handleCancel}>Cancel</AlertDialogCancel>
+            <AlertDialogCancel onClick={handleCancel}>
+              {_t("modals.newInvoiceAlert.cancel")}
+            </AlertDialogCancel>
             <AlertDialogAction onClick={handleConfirm}>
-              {confirmLabel ?? "Create new invoice"}
+              {confirmLabel ?? _t("modals.newInvoiceAlert.confirm")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

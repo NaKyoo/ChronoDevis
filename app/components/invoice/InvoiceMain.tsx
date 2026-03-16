@@ -29,9 +29,13 @@ const InvoiceMain = () => {
                         console.log(err);
                     })}
                 >
-                    <div className="flex flex-wrap">
-                        <InvoiceForm />
-                        <InvoiceActions />
+                    <div className="flex flex-col xl:flex-row gap-4">
+                        <div className="flex-[1.2] min-w-0">
+                            <InvoiceForm />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <InvoiceActions />
+                        </div>
                     </div>
                 </form>
             </Form>

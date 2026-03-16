@@ -17,6 +17,9 @@ import { Input } from "@/components/ui/input";
 // Components
 import { BaseButton } from "@/app/components";
 
+// Contexts
+import { useTranslationContext } from "@/contexts/TranslationContext";
+
 // Icons
 import { Percent, RefreshCw } from "lucide-react";
 
@@ -43,6 +46,7 @@ const ChargeInput = ({
     setType,
     currency,
 }: ChargeInputProps) => {
+    const { _t } = useTranslationContext();
     const { control } = useFormContext();
 
     return (
@@ -55,6 +59,7 @@ const ChargeInput = ({
                         variant="ghost"
                         size="icon"
                         onClick={() => switchAmountType(type, setType)}
+                        tooltipLabel={_t("actions.reset")}
                     >
                         <RefreshCw />
                     </BaseButton>

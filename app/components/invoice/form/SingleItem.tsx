@@ -119,7 +119,7 @@ const SingleItem = ({
                         #{index + 1} - {itemName}
                     </p>
                 ) : (
-                    <p className="font-medium">#{index + 1} - Empty name</p>
+                    <p className="font-medium">#{index + 1} - {_t("form.steps.lineItems.emptyName")}</p>
                 )}
 
                 <div className="flex gap-3">
@@ -135,7 +135,7 @@ const SingleItem = ({
                     {/* Up Button */}
                     <BaseButton
                         size={"icon"}
-                        tooltipLabel="Move the item up"
+                        tooltipLabel={_t("form.steps.lineItems.moveUpTooltip")}
                         onClick={() => moveFieldUp(index)}
                         disabled={index === 0}
                     >
@@ -145,7 +145,7 @@ const SingleItem = ({
                     {/* Down Button */}
                     <BaseButton
                         size={"icon"}
-                        tooltipLabel="Move the item down"
+                        tooltipLabel={_t("form.steps.lineItems.moveDownTooltip")}
                         onClick={() => moveFieldDown(index)}
                         disabled={index === fields.length - 1}
                     >
@@ -160,7 +160,7 @@ const SingleItem = ({
                 <FormInput
                     name={`${name}[${index}].name`}
                     label={_t("form.steps.lineItems.name")}
-                    placeholder="Item name"
+                    placeholder={_t("form.steps.lineItems.namePlaceholder")}
                     vertical
                 />
 
@@ -190,7 +190,7 @@ const SingleItem = ({
                     <Input
                         value={`${total} ${currency}`}
                         readOnly
-                        placeholder="Item total"
+                        placeholder={_t("form.steps.lineItems.totalPlaceholder")}
                         className="border-none font-medium text-lg bg-transparent"
                         size={10}
                     />
@@ -199,7 +199,7 @@ const SingleItem = ({
             <FormTextarea
                 name={`${name}[${index}].description`}
                 label={_t("form.steps.lineItems.description")}
-                placeholder="Item description"
+                placeholder={_t("form.steps.lineItems.descriptionPlaceholder")}
             />
             <div>
                 {/* Not allowing deletion for first item when there is only 1 item */}
